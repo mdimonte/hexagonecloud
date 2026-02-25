@@ -1,2 +1,3 @@
 # hexagonecloud
-repo for the cloud-computing training at Hexagone
+
+repo for the cloud-computing training
