@@ -20,3 +20,21 @@ Here are the main steps to perform:
   - use a 'Standard HDD' OS disk
   - do not enable specific monitoring, backup
   - enable auto-shutdown (at 6.00pm for example)
+
+## Hands-on 2
+
+The objective is to restart from scratch and provision the solution depicted below:
+
+![alt text](hands-ons-vnet-vms.png)
+
+> Note: only the network traffic depicted with green arrows should be allowed
+
+Once this is done, verify that `ssh` traffic is implemented as expected:
+- you can establish an `ssh` connection from your laptop to the `jumpoff` VM
+- you cannot establish `ssh` connections from your laptop directly to the VMs hosted in the subnets `frontend` or `backend`
+- you can establish an `ssh` connection from the `jumpoff` VM to the VMs hosted in the subnets `frontend` or `backend`
+
+Finally, verify that application traffic is also implemented as expected:
+- you can open network connections from your laptop to the VM hosted in the subnet `frontend` only on ports `80` and `443`
+- you can open network connections from the VM hosted in the subnet `frontend` to the VM hosted in the subnet `backend` only on ports `8080` and `8443`
+
