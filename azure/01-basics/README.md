@@ -54,11 +54,58 @@ The objective is to connect to the VM `frontend-vm-1` to install and configure a
 ## Hands-on 4
 
 The objective is to delete the VM `frontend-vm-1` and to recreate it using the CLI `az` as much as possible instead of using the Azure Portal:
-- create the VM using `az`
+Here is the [Azure documentation about provisioning VMs using the `az` CLI](): read it, experiment it until you get the result you want.
+
+### Step 1
+- recreate the VM using the `az` CLI with the exact same charactertics as the ones you used previously with the Azure portal.
+
+**`az` started kit**
+```bash
+# login to Azure with the CLI
+az login --use-device-code
+
+# list all subscriptions
+az account list
+
+# show what is the subscription currently selected
+az account show
+
+# use one specific subscription
+az account set --subscription "Azure for Students"
+
+# list the resource groups that exist in the subscription currently selected
+az group list
+
+# list all vms existing in the current subscription
+az vm list
+
+# same as above, but display only the name of the VM along with their resource-group
+az vm list | jq -r '.[] | "\(.name) \t \(.resourceGroup)"'
+
+# list the vms that exist in the resource-group 'my-rg'
+az vm list --resource-group my-rg
+
+# same as above, but display only the name
+az vm list -g my-rg | jq '.[] | .name'
+
+# get the list of available Ubuntu official images 
+az vm image list --publisher Canonical --output table
+
+# get the help about creating a VM
+az vm create --help
+```
+
+### Step 2
+
+- Delete the VM created just above, and now that you know how to create it using a one-line command, add the last piece that is missing: update the approach so that when provisioning the VM using the `az` CLI, automatically, `nginx` is installed and configured using a `cloud-init` script.  
+  In the Azure context, this can be achieved leveraging what is called `Custom Data`. Here is the official [Azure doc about this](https://learn.microsoft.com/en-us/azure/virtual-machines/custom-data)
+
   > note: manage the installation of nginx as well as its configuration using a [cloud-init](https://cloud-init.io/) script.  
-  > you will need to document:
-  > - a section `packages` to install `apt` packages
-  > - a section `write_files` to create files
-  > - a section `runcmd` to execute specific shell commands (i.e. to generate the certificate)
+  > you will need to document a file in a `yaml` format with these map items:
+  > - `packages:` to install `apt` packages
+  > - `write_files:` to create files
+  > - `runcmd:` to execute specific shell commands (i.e. to generate the certificate)
+  >
+  > Here are some [useful `cloud-init` examples](https://docs.cloud-init.io/en/latest/reference/examples.html#yaml-examples)
 - add the new VM in the backend pool of the LoadBalancer using the Azure Portal
 - verify that you can access the web-server from your laptop
