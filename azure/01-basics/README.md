@@ -51,7 +51,7 @@ The objective is to connect to the VM `frontend-vm-1` to install and configure a
 - cutomize the file `/var/www/html/index.html` as you like
 - verify that you can access the web-server from your laptop
 
-# Hands-on 4
+## Hands-on 4
 
 The objective is to delete the VM `frontend-vm-1` and to recreate it using the CLI `az` as much as possible instead of using the Azure Portal:
 - create the VM using `az`
