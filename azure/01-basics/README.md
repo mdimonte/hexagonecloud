@@ -40,7 +40,7 @@ Finally, verify that application traffic is also implemented as expected:
 
 ## Hands-on 3
 
-The objective is to connect to the VM `frontend-vm` and to install and configure an `nginx` webserver:
+The objective is to connect to the VM `frontend-vm-1` to install and configure an `nginx` webserver:
 - install `nginx` using `apt`
 - generate a self-signed TLS certificate referencing the DNS name associated to the public IP address bound to the public load-balancer forwarding the traffic to the vm `fronend-vm`
   > note: use the tool `openssl` to generate the certificate
@@ -49,10 +49,11 @@ The objective is to connect to the VM `frontend-vm` and to install and configure
     - `nginx` listens on port 443 for ssl traffic
     - `nginx` use the TLS certificate you have created above to secure the HTTP traffic on port 443
 - cutomize the file `/var/www/html/index.html` as you like
+- verify that you can access the web-server from your laptop
 
 # Hands-on 4
 
-The objective is to delete the VM `frontend-vm-1` and to recreate it using the CLI `az` as much as possible instead of the Azure Portal:
+The objective is to delete the VM `frontend-vm-1` and to recreate it using the CLI `az` as much as possible instead of using the Azure Portal:
 - create the VM using `az`
   > note: manage the installation of nginx as well as its configuration using a [cloud-init](https://cloud-init.io/) script.  
   > you will need to document:
@@ -60,3 +61,4 @@ The objective is to delete the VM `frontend-vm-1` and to recreate it using the C
   > - a section `write_files` to create files
   > - a section `runcmd` to execute specific shell commands (i.e. to generate the certificate)
 - add the new VM in the backend pool of the LoadBalancer using the Azure Portal
+- verify that you can access the web-server from your laptop
