@@ -27,3 +27,8 @@ az vm create \
   --public-ip-address "" \
   --nsg "" \
   --custom-data @$CLOUD_INIT_FILE
+
+# Enable managed boot diagnostics to allow serial console access
+az vm boot-diagnostics enable \
+  --name $VM_NAME \
+  --resource-group $RG_NAME
