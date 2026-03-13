@@ -53,8 +53,8 @@ The objective is to connect to the VM `frontend-vm-1` to install and configure a
 
 ## Hands-on 4
 
-The objective is to delete the VM `frontend-vm-1` and to recreate it using the CLI `az` as much as possible instead of using the Azure Portal:
-Here is the [Azure documentation about provisioning VMs using the `az` CLI](): read it, experiment it until you get the result you want.
+The objective is to delete the VM `frontend-vm-1` and to recreate it using the CLI `az` as much as possible instead of using the Azure Portal:  
+Here is the [Azure documentation about provisioning VMs using the `az` CLI](https://learn.microsoft.com/en-us/cli/azure/vm?view=azure-cli-latest#az-vm-create): read it, experiment it until you get the result you want.
 
 ### Step 1
 - recreate the VM using the `az` CLI with the exact same charactertics as the ones you used previously with the Azure portal.
