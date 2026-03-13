@@ -1,0 +1,57 @@
+#cloud-config
+
+# Update apt database and install packages
+package_update: true
+packages:
+  - curl
+  - nginx
+  - openssl
+
+# Write the custom index.html and Nginx configuration files
+write_files:
+  - path: /var/www/html/index.html
+    owner: root:root
+    permissions: '0644'
+    content: |
+      <!DOCTYPE html>
+      <html>
+      <head>
+          <title>Hexagone rocks!!</title>
+      </head>
+      <body>
+          <h1>Hexagone is now on the Cloud</h1>
+      </body>
+      </html>
+      
+  - path: /etc/nginx/sites-available/default
+    owner: root:root
+    permissions: '0644'
+    content: |
+      server {
+          listen 80 default_server;
+
+          # SSL configuration
+          listen 443 ssl default_server;
+
+          ssl_certificate /etc/ssl/certs/nginx-selfsigned.crt;
+          ssl_certificate_key /etc/ssl/private/nginx-selfsigned.key;
+
+          root /var/www/html;
+          index index.html;
+
+          server_name _;
+
+          location / {
+              try_files $uri $uri/ =404;
+          }
+      }
+
+runcmd:
+  # 1. Generate a self-signed TLS certificate valid for 365 days
+  - LOCATION=$(curl -s -H Metadata:true --noproxy "*" "http://169.254.169.254/metadata/instance/compute/location?api-version=2021-02-01&format=text") && openssl req -x509 -nodes -days 365 -newkey rsa:4096 -keyout /etc/ssl/private/nginx-selfsigned.key -out /etc/ssl/certs/nginx-selfsigned.crt -subj "/CN=hexagone-mdm.${LOCATION}.cloudapp.azure.com"
+  
+  # 2. Enable Nginx to start on boot
+  - systemctl enable nginx
+  
+  # 3. Restart Nginx to apply the new default site configuration and SSL certificates
+  - systemctl restart nginx
