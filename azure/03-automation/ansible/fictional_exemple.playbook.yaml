@@ -1,0 +1,20 @@
+- name: Update nginx configuration restart the service
+  hosts: all
+  gather_facts: yes
+
+  tasks:
+    - name: Update nginx configuration file
+      copy:
+        src: nginx.conf
+        dest: /etc/nginx/nginx.conf
+      become: true
+
+    - name: Restart nginx
+      service:
+        name: nginx
+        state: restarted
+      become: true
+    
+    - name: Display a message to indicate the playbook has completed
+      debug:
+        msg: "Nginx config updated and service restarted successfully!"

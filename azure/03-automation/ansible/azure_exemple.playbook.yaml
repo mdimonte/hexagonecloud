@@ -1,0 +1,23 @@
+# Playbook to create an Azure resource group
+- name: Create a resource group in Azure
+  hosts: localhost
+  gather_facts: no
+  connection: local
+
+  environment:
+    AZURE_TENANT: "{{ azure_tenant }}"
+    AZURE_SUBSCRIPTION_ID: "{{ azure_subscription_id }}"
+    AZURE_CLIENT_ID: "{{ azure_client_id }}"
+    AZURE_SECRET: "{{ azure_secret }}"
+
+  tasks:
+    - name: Create resource group
+      azure.azcollection.azure_rm_resourcegroup:
+        name: myResourceGroup
+        location: francecentral
+      register: rg_result
+
+    - name: Display the result of resource group creation
+      debug:
+        var: rg_result
+

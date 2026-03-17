@@ -1,0 +1,25 @@
+
+- name: Demo play for Windows machines
+  hosts: my_windows_machines
+  gather_facts: yes
+  connection: winrm
+
+  tasks:
+
+
+- name: Demo play for Linux machines
+  hosts: my_linux_machines
+  gather_facts: yes
+  connection: ssh
+
+  tasks:
+
+
+- name: Demo play for cloud services
+  hosts: my_cloud_environments
+  gather_facts: yes
+  connection: local
+
+  tasks:
+
+

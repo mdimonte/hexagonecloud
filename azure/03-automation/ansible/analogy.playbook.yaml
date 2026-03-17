@@ -1,0 +1,86 @@
+---
+- name: Construire un nichoir à oiseaux pour John et Paul
+  hosts:
+    - John
+    - Paul
+  
+  tasks:
+    - name: Couper du bois à la bonne taille
+    - name: Assembler les pièces avec des clous
+    - name: Peindre le nichoir
+
+---
+- name: Construire un nichoir à oiseaux pour John et Paul
+  hosts:
+    - John
+    - Paul
+  
+  tasks:
+    - name: Couper du bois à la bonne taille
+      scie:
+
+    - name: Assembler les pièces avec des clous
+      marteau:
+
+    - name: Peindre le nichoir
+      pinceau:
+
+
+---
+- name: Construire un nichoir à oiseaux pour John et Paul
+  hosts:
+    - John
+    - Paul
+  
+  tasks:
+    - name: Couper du bois à la bonne taille
+      scie:
+        longueur: 30cm
+        largeur: 20cm
+
+
+---
+- name: Construire un nichoir à oiseaux pour John et Paul
+  hosts:
+    - John
+    - Paul
+  
+  tasks:
+    - name: Couper du bois à la bonne taille
+      scie:
+        longueur: 30cm
+        largeur: 20cm
+    
+    - name: Assembler les pièces avec des clous
+      marteau:
+        nombre_de_clous: 10
+        taille_des_clous: 4cm
+
+    - name: Peindre le nichoir
+      pinceau:
+        couleur: vert
+        couches: 2
+
+
+---
+- name: Fabriquer des tasses en argile
+  hosts:
+    - george
+    - ringo
+  
+  tasks:
+    - name: Façonner l'argile en forme de tasse
+      tour:
+        terre: argile_rouge
+        forme: tasse
+    
+    - name: Laisser sécher les tasses
+      sechoir:
+        durée: 24h
+        humidité: basse
+
+    - name: Cuire les tasses dans le four
+      four:
+        temperature: 1000
+        durée: 6h
+
