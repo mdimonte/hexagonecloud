@@ -28,7 +28,7 @@ source .venv/bin/activate
 pip install ansible
 deactivate
 source .venv/bin/activate
-ansible-galaxy collection install azure.azcollection
+ansible-galaxy collection install azure.azcollection --force
 pip install -r ~/.ansible/collections/ansible_collections/azure/azcollection/requirements.txt
 ansible-galaxy collection list
 deactivate
