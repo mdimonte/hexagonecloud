@@ -1,0 +1,17 @@
+# Exercise 2 Solution - Example Variable Values
+
+project_name = "hexagone-mdm-2026"
+
+location = "francecentral"
+
+tags = {
+  Environment = "Hexagone"
+  Course      = "CloudComputing-Terraform-101"
+  Student     = "YourName"
+  ManagedBy   = "Terraform"
+  Exercise    = "Exercise-2"
+}
+
+storage_account_tier = "Standard"
+
+storage_replication_type = "LRS"

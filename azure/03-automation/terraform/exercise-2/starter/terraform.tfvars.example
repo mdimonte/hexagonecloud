@@ -1,0 +1,24 @@
+# Exercise 2 - Example Variable Values
+# Copy this file to terraform.tfvars and customize with your values
+# IMPORTANT: terraform.tfvars is in .gitignore - never commit it!
+
+# TODO: Change this to something unique (your name + date, etc.)
+# Must be 3-20 characters for resource naming
+project_name = "hexagone-mdm-2026"
+
+# TODO: Choose your preferred Azure region
+# Run: az account list-locations -o table
+# Common options: francecentral, northeurope, westeurope
+location = "francecentral"
+
+# TODO (Optional): Add your subscription ID if needed
+# Get it with: az account show --query id -o tsv
+# subscription_id = "00000000-0000-0000-0000-000000000000"
+
+# TODO: Customize tags (optional)
+tags = {
+  Environment = "Hexagone"
+  Course      = "CloudComputing-Terraform-101"
+  Student     = "YourName"
+  ManagedBy   = "Terraform"
+}

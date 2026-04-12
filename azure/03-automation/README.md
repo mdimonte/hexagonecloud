@@ -14,11 +14,14 @@ Using the [Azure portal](https://portal.azure.com) execute these 2 main steps:
     - on the main panel, select "Client secrets" then click on "New client secret"
     - !! register the `Secret` generated: it will not be disclosed again
 
-## Ansible installation
 
-The objective here is to describe the technical steps to install `ansible` in a pyhton virtual environment
+## Ansible
 
-### Technical steps
+### Ansible installation
+
+The objective here is to describe the technical steps to install `ansible` in a python virtual environment
+
+#### Technical steps
 
 Run the following commands from a terminal
 
@@ -35,7 +38,7 @@ deactivate
 source .venv/bin/activate
 ```
 
-## Create a first ansible playbook
+### Create a first ansible playbook
 
 As a reminder here are:
 - the list of [Ansible collections](https://docs.ansible.com/projects/ansible/latest/collections/index.html)
@@ -70,8 +73,16 @@ ansible-playbook my-playbook.yaml \
 --extra-vars azure_secret="xxxx"
 ```
 
-## Update the ansible playbook
+### Update the ansible playbook
 
-Update teh playbook you have created above so that:
+Update the playbook you have created above so that:
 - it creates a `Virtual Network`
 - it creates 2 `subnets` in the `Virtual Network`
+
+## Terraform
+
+### Terraform installation
+
+The objective here is to describe how to install the `terraform` CLI.
+
+See [here](./terraform/README.md) for detailed info
