@@ -96,7 +96,6 @@ terraform/
 │   ├── README.md
 │   ├── starter/
 │   └── solution/
-└── resources.md              # Further learning resources
 ```
 
 ## Tips
