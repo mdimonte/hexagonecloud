@@ -4,7 +4,7 @@
 
 # TODO: Change this to something unique (your name + date, etc.)
 # Must be 3-20 characters for resource naming
-project_name = "hexagone-mdm-2026"
+project_name = "hexagone-mdm-2026-2"
 
 # TODO: Choose your preferred Azure region
 # Run: az account list-locations -o table

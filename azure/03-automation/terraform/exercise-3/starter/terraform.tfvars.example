@@ -1,0 +1,20 @@
+# Exercise 3 - Example Variable Values
+
+project_name = "hexagone-mdm-3"
+
+location = "francecentral"
+
+vnet_address_space = ["10.0.0.0/16"]
+
+subnets = {
+  web = "10.0.1.0/24"
+  app = "10.0.2.0/24"
+  db  = "10.0.3.0/24"
+}
+
+tags = {
+  Environment = "Hexagone"
+  Course      = "CloudComputing-Terraform-101"
+  Exercise    = "3"
+  ManagedBy   = "Terraform"
+}

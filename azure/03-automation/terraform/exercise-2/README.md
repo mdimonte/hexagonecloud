@@ -213,16 +213,6 @@ terraform destroy
 
 **Verify in Azure Portal** that resources are deleted.
 
-## Expected Outcomes
-
-By the end of this exercise, you should be able to:
-- ✅ Configure the Azure provider
-- ✅ Use variables and variable files
-- ✅ Deploy an Azure Storage Account
-- ✅ Use outputs to display information
-- ✅ Modify existing infrastructure
-- ✅ Understand Terraform data types
-
 ## Key Takeaways
 
 1. **Variables** make configurations reusable and flexible
@@ -283,7 +273,7 @@ Try these on your own:
 
 ## Next Steps
 
-Great job deploying your first Azure resource! In [Exercise 3: Multi-Resource Infrastructure](../exercise-3/), you'll learn to deploy multiple related resources and understand dependencies.
+In [Exercise 3: Multi-Resource Infrastructure](../exercise-3/), you'll learn to deploy multiple related resources and understand dependencies.
 
 ---
 
