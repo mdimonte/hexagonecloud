@@ -1,0 +1,35 @@
+# Exercise 4 - Example Variable Values
+# IMPORTANT: Copy to terraform.tfvars and customize!
+# NEVER commit terraform.tfvars (contains sensitive data)
+
+# TODO: Choose a unique project name (will be used for all resources)
+# Must be 3-15 characters, will have random suffix added
+project_name = "hexagone-mdm-4"
+
+location = "francecentral"
+
+environment = "dev"
+
+# TODO: Set database credentials
+# IMPORTANT: Use a strong password!
+# Must be at least 16 characters with uppercase, lowercase, numbers, and symbols
+db_admin_username = "psqladmin"
+db_admin_password = "ChangeMe!Strong123456"  # TODO: Change this!
+
+# Optional: App Service SKU
+# F1 = Free (limited), B1 = Basic ($13/month), S1 = Standard ($70/month)
+app_service_sku = "F1"
+
+# Optional: Application settings
+app_settings = {
+  "ENVIRONMENT" = "development"
+  "DEBUG"       = "true"
+}
+
+tags = {
+  Environment = "Hexagone"
+  Course      = "CloudComputing-Terraform-101"
+  Exercise    = "4"
+  Student     = "YourName"
+  ManagedBy   = "Terraform"
+}

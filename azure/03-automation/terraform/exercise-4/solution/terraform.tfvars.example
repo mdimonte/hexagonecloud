@@ -1,0 +1,27 @@
+# Exercise 4 Solution - Example Variable Values
+# Copy to terraform.tfvars and customize!
+# NEVER commit terraform.tfvars (contains sensitive data)
+
+project_name = "hexagone-mdm-4"
+
+location = "francecentral"
+
+environment = "dev"
+
+db_admin_username = "psqladmin"
+db_admin_password = "ComplexP@ssw0rd2026!"
+
+app_service_sku = "F1"
+
+app_settings = {
+  "ENVIRONMENT" = "development"
+  "DEBUG"       = "true"
+  "LOG_LEVEL"   = "info"
+}
+
+tags = {
+  Environment = "Hexagone"
+  Course      = "CloudComputing-Terraform-101"
+  Exercise    = "4"
+  ManagedBy   = "Terraform"
+}
